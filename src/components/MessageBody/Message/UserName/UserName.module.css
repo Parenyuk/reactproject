@@ -1,0 +1,5 @@
+.userName {
+    display: grid;
+    grid-area: name;
+    color: deepskyblue;
+}

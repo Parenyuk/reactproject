@@ -1,0 +1,14 @@
+.message {
+    display: grid;
+    grid-template-areas: 'name name' 'text time';
+    grid-template-columns: 8fr 2fr;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 20vw;
+    padding: 10px;
+    background-color: white;
+    /*grid-area: mes;*/
+    margin-left: 100px;
+    margin-top: -60px;
+
+}

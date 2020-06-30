@@ -1,0 +1,4 @@
+.UserText {
+    display: grid;
+    grid-area: text;
+}
