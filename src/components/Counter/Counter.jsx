@@ -11,7 +11,6 @@ export default class Counter extends React.Component {
 
     }
     onButtonClick = () => {
-        debugger
         alert(this.state.message);
         this.setState({message: ''});
 
