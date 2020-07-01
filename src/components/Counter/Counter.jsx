@@ -1,5 +1,8 @@
 import React from "react";
 import s from './Counter.module.css'
+import CounterButton from "./CounterButton/CounterButton";
+import CounterInput from "./CounterInput/CounterInput";
+import CounterScreen from "./CounterScreen/CounterScreen";
 
 export default class Counter extends React.Component {
     state = {
@@ -23,10 +26,10 @@ export default class Counter extends React.Component {
         return (
             <div className={s.counter}>
                 <div className={s.count}>
-                    <span>{this.state.count}</span>
+                   <CounterScreen count={this.state.count} />
                 </div>
-                <input onChange={this.onInputMessage} value={this.state.message}/>
-                <button onClick={this.onButtonClick} onChange={this.onInputMessage}>button</button>
+                <CounterInput onInputMessage={this.onInputMessage} message={this.state.message}/>
+                <CounterButton onButtonClick={this.onButtonClick}  onInputMessage={this.onInputMessage}/>
             </div>
         )
     }
