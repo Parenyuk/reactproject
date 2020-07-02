@@ -1,3 +1,7 @@
+.active:visited {
+    color: red;
+}
+
 
 .links {
     font-size: 24px;

@@ -9,11 +9,11 @@ const Navbar = () => {
             <Menu>
                 <nav className={'links'}>
                     <ul>
-                        <li className="menu-item"><NavLink to={'/monday'}>Monday</NavLink></li>
-                        <li className="menu-item"><NavLink to={'/tuesday'}>Tuesday</NavLink></li>
-                        <li className="menu-item"><NavLink to={'/wednesday'}>Wednesday</NavLink></li>
-                        <li className="menu-item"><NavLink to={'/thursday'}>Thursday</NavLink></li>
-                        <li className="menu-item"><NavLink to={'/friday'}>Friday</NavLink></li>
+                        <li className="menu-item"><NavLink to={'/monday'} activeClassName={'active'} >Monday</NavLink></li>
+                        <li className="menu-item"><NavLink to={'/tuesday'} activeClassName={'active'}>Tuesday</NavLink></li>
+                        <li className="menu-item"><NavLink to={'/wednesday'} activeClassName={'active'}>Wednesday</NavLink></li>
+                        <li className="menu-item"><NavLink to={'/thursday'}activeClassName={'active'}>Thursday</NavLink></li>
+                        <li className="menu-item"><NavLink to={'/friday'} activeClassName={'active'}>Friday</NavLink></li>
                     </ul>
 
                 </nav>

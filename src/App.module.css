@@ -1,13 +1,4 @@
-/*.img {*/
-/*  width: 100vw;*/
-/*}*/
 
-/*.App {*/
-/*  display: grid;*/
-/*  grid-template-areas: 'img' 'message';*/
-/*  background-color: greenyellow;*/
-/*  max-width: 30vw;*/
-/*}*/
 
 .App {
   display: grid;

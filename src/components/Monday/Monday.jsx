@@ -1,8 +1,8 @@
 import React from "react";
 import s from "../../App.module.css";
-import MessageBody from "../MessageBody/MessageBody";
-import HumanQualities from "../HumanQuailities/HumanQualities";
-import Counter from "../Counter/Counter";
+import MessageBody from "./MessageBody/MessageBody";
+import HumanQualities from "./HumanQualities/HumanQualities";
+import Counter from "./Counter/Counter";
 
 
  const Monday = () => {

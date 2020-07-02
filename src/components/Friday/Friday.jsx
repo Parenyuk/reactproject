@@ -1,8 +1,9 @@
 import React from "react";
+import s from "../../App.module.css";
 
 const Friday = () => {
     return (
-        <div>
+        <div className={s.App}>
             Friday
         </div>
     )
