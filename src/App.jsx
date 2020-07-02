@@ -45,7 +45,7 @@ function App() {
       <HashRouter>
             <Navbar/>
             <Switch>
-                <Route path='/monday'  ><Monday/> </Route>
+                <Route exact path='/monday'  ><Monday/> </Route>
                 <Route path='/tuesday'><Tuesday/> </Route>
                 <Route path='/wednesday'><Wednesday/></Route>
                 <Route path='/thursday'><Thursday/></Route>
