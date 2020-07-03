@@ -5,7 +5,7 @@ import HumanQualities from "./HumanQualities/HumanQualities";
 import Counter from "./Counter/Counter";
 
 
- const Monday = () => {
+ const Monday = (props) => {
     return (
         <div>
             <div className={s.App}>

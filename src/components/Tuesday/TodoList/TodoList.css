@@ -1,0 +1,29 @@
+.App {
+
+}
+
+.todoList {
+    width: 300px;
+    margin: 0 auto;
+    background-color: teal;
+}
+
+.todoList > div {
+    padding: 10px;
+}
+
+.todoList-task {
+
+}
+
+.todoList-task.done {
+    opacity: 0.5;
+}
+
+.filter-active {
+    background-color: blue;
+}
+
+.error {
+    border-color: red;
+}

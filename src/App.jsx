@@ -5,9 +5,7 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Monday from "./components/Monday/Monday";
 import Tuesday from "./components/Tuesday/Tuesday";
-import Wednesday from "./components/Wednesday/Wednesday";
-import Thursday from "./components/Thursday/Thursday";
-import Friday from "./components/Friday/Friday";
+import ListElement from "./components/ListElement/ListElement";
 
 // class App extends React.Component{
 //     state = {
@@ -45,11 +43,11 @@ function App() {
       <HashRouter>
             <Navbar/>
             <Switch>
-                <Route exact path='/monday'  ><Monday/> </Route>
+                <Route exact  path='/monday' ><Monday/> </Route>
                 <Route path='/tuesday'><Tuesday/> </Route>
-                <Route path='/wednesday'><Wednesday/></Route>
-                <Route path='/thursday'><Thursday/></Route>
-                <Route path='/friday'><Friday/></Route>
+                <Route path='/wednesday'><ListElement title={'Wednesday'} /> </Route>
+                <Route path='/thursday'><ListElement title={'Thursday'} /></Route>
+                <Route path='/friday'><ListElement title={'Friday'} /></Route>
             </Switch>
 
       </HashRouter>
