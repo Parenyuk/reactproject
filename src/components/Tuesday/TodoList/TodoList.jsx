@@ -3,7 +3,7 @@ import s from './TodoList.css'
 import TodoListHeader from "./TodoListHeader";
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
-import saveState, {saveStateToLocalStorage} from './LocalStorage';
+import {restoreStateLocalStorage, saveStateToLocalStorage} from './LocalStorage';
 
 class TodoList extends React.Component {
 
@@ -17,11 +17,10 @@ class TodoList extends React.Component {
         this.restoreState();
     }
 
-    // saveState()
-    // restoreState()
 
-    saveState = (state) => {
-        saveStateToLocalStorage(this.state)
+
+    saveState = () => {
+        saveStateToLocalStorage(this.state, "our-state")
         // // переводим объект в строку
         // let stateAsString = JSON.stringify(this.state);
         // // сохраняем нашу строку в localStorage под ключом "our-state"
@@ -34,14 +33,15 @@ class TodoList extends React.Component {
             tasks: [],
             filterValue: "All"
         };
+        state = restoreStateLocalStorage("our-state", state)
+        // // считываем сохранённую ранее строку из localStorage
+        // let stateAsString = localStorage.getItem("our-state");
+        // // а вдруг ещё не было ни одного сохранения?? тогда будет null.
+        // // если не null, тогда превращаем строку в объект
+        // if (stateAsString != null) {
+        //     state = JSON.parse(stateAsString);
+        // }
 
-        // считываем сохранённую ранее строку из localStorage
-        let stateAsString = localStorage.getItem("our-state");
-        // а вдруг ещё не было ни одного сохранения?? тогда будет null.
-        // если не null, тогда превращаем строку в объект
-        if (stateAsString != null) {
-            state = JSON.parse(stateAsString);
-        }
         // устанавливаем стейт (либо пустой, либо восстановленный) в стейт
         this.setState(state, () => {
             this.state.tasks.forEach(t => {
@@ -83,6 +83,8 @@ class TodoList extends React.Component {
         })
         this.setState({
             tasks: filteredTasks
+        }, () => {
+            this.saveState()
         })
         // let tasks = this.state.tasks;
         // this.setState({
