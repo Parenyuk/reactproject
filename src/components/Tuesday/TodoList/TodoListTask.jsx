@@ -1,7 +1,11 @@
 import React from "react";
 import s from './TodoList.css'
+import Priority from "./Priority";
 
 class TodoListTask extends React.Component {
+    // state = {
+    //     priority:
+    // }
 
     onIsDoneChanged = (e) => {
         this.props.changeStatus(this.props.task.id, e.currentTarget.checked);
@@ -10,6 +14,12 @@ class TodoListTask extends React.Component {
     onTitleChanged = (e) => {
         this.props.changeTitle(this.props.task.id, e.currentTarget.value);
     }
+    deleteTask = () => {
+        this.props.deleteTask(this.props.task.id)
+    }
+    // changePriority = (e) => {
+    //     this.props.changePriority(this.props.task.id, e.currentTarget.value)
+    // }
 
     state = {
         editMode: false
@@ -23,9 +33,7 @@ class TodoListTask extends React.Component {
         this.setState({editMode: false});
     }
 
-    deleteTask = () => {
-        this.props.deleteTask(this.props.task.id)
-    }
+
 
 
     render = () => {
@@ -40,7 +48,7 @@ class TodoListTask extends React.Component {
                     ? <input onBlur={this.deactivateEditMode} onChange={this.onTitleChanged} autoFocus={true}
                              value={this.props.task.title}/>
                     : <span onClick={this.activateEditMode}>{this.props.task.id} - {this.props.task.title}</span>
-                }, priority: {this.props.task.priority}
+                },  priority: <Priority   taskId={this.props.task.id} priority={this.props.task.priority} changePriority={this.props.changePriority}/>
                 <span onClick={this.deleteTask}>{` x`}</span>
             </div>
         );
@@ -49,5 +57,5 @@ class TodoListTask extends React.Component {
 
 export default TodoListTask;
 
-
+// {this.props.task.priority}
 

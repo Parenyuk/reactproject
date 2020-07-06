@@ -1,5 +1,6 @@
-import {NavLink} from "react-router-dom";
+
 import React from "react";
+import {NavLink} from "react-router-dom";
 import './Navbar.css'
 import { slide as Menu } from 'react-burger-menu'
 

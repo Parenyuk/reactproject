@@ -86,36 +86,9 @@ class TodoList extends React.Component {
         }, () => {
             this.saveState()
         })
-        // let tasks = this.state.tasks;
-        // this.setState({
-        //     tasks: tasks.map((t) => {
-        //         if (t.id === taskId) {
-        //             return t;
-        //         }
-        //         else {
-        //             return {
-        //                 ...t,
-        //                 tasks: t.tasks.filter(t => t.id != action.taskId)
-        //             }
-        //         }
-        //     })
-        // }, () => { this.saveState() })
+
     }
 
-//     case DELETE_TASK:
-//     return {
-// ...state,
-//     todolists: state.todolists.map(tl => {
-//     if (tl.id === action.todolistId) {
-//     return {
-// ...tl,
-//     tasks: tl.tasks.filter(t => t.id != action.taskId)
-// }
-// } else {
-//     return tl
-// }
-// })
-// }
 
     changeFilter = (newFilterValue) => {
         this.setState({
@@ -133,7 +106,7 @@ class TodoList extends React.Component {
                 return {...t, ...obj};
             }
         });
-
+debugger
         this.setState({
             tasks: newTasks
         }, () => {
@@ -143,10 +116,11 @@ class TodoList extends React.Component {
     changeStatus = (taskId, isDone) => {
         this.changeTask(taskId, {isDone: isDone});
     }
-
-
     changeTitle = (taskId, title) => {
         this.changeTask(taskId, {title: title});
+    }
+    changePriority = (taskId, priority) => {
+        this.changeTask(taskId, {priority: priority})
     }
 
     render = () => {
@@ -157,6 +131,7 @@ class TodoList extends React.Component {
                     <TodoListHeader addTask={this.addTask}/>
                     <TodoListTasks changeStatus={this.changeStatus}
                                    changeTitle={this.changeTitle}
+                                   changePriority={this.changePriority}
                                    deleteTask={this.deleteTask}
                                    tasks={this.state.tasks.filter(t => {
                                        if (this.state.filterValue === "All") {
